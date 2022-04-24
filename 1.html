@@ -22,13 +22,13 @@
 <script>
   "use strict";
 
-  const C = prompt('Введи температуру в градусах Цельсия (С)');
-  const F =  (9 / 5) * C + 32;
-  alert('Температура в Фаренгейтах (F): ' + F);
+  // const degreesCelsius = +prompt('Введи температуру в градусах Цельсия (С)');
+  // const degreesFahrenheit =  Math.round((9 / 5) * degreesCelsius + 32);
+  // alert('Температура в Фаренгейтах (F): ' + degreesFahrenheit22);
 
   // Или вот так без объявления второй переменной
-  // const C = prompt('Введи температуру в градусах Цельсия (С)');
-  // alert(`Температура в Фаренгейтах (F): ${(9 / 5) * C + 32}`);
+  const degreesCelsius = +prompt('Введи температуру в градусах Цельсия (С)');
+  alert(`Температура в Фаренгейтах (F): ${Math.round((9 / 5) * degreesCelsius + 32)}`);
 
   
 </script>
