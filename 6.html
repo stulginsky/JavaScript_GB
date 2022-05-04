@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо вывести горку в консоль (используя цикл for), как показано на
+рисунке, только у вашей горки должно быть 20 рядов, а не 5:
+
+```
+x
+xx
+xxx
+xxxx
+xxxxx
+```
+
+Примечание: в трех косых кавычках ``` показан пример кода для вывода, вам эти
+кавычки выводить не нужно.
+-->
+<script>
+  "use strict";
+ 
+
+let mountain = ['x']; 
+for (console.log(mountain); mountain.length < 20; console.log(mountain)) {
+  mountain.push('x')
+}
+
+// Не додумался, что ведь строку можно считать!.. :( Как потом увидел в решении
+// for (let i = ''; i.length < 20; console.log(i += 'x')) {}
+// Сделал массивом.
+
+</script>
+</body>
+</html>
