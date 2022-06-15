@@ -107,8 +107,36 @@
               d="M27.6903 30.0377C27.0267 30.0108 26.4002 29.7242 25.9451 29.2394C25.4899 28.7545 25.2425 28.1101 25.2559 27.4445C25.2694 26.7788 25.5425 26.1449 26.0168 25.6789C26.4911 25.2129 27.1287 24.9519 27.7928 24.9519C28.4569 24.9519 29.0944 25.2129 29.5686 25.6789C30.0429 26.1449 30.3161 26.7788 30.3295 27.4445C30.3429 28.1101 30.0955 28.7545 29.6404 29.2394C29.1853 29.7242 28.5587 30.0108 27.8952 30.0377H27.6903ZM7.76887 27.2853C7.76887 26.7409 7.92987 26.2087 8.23152 25.7561C8.53317 25.3035 8.96193 24.9507 9.46356 24.7423C9.96518 24.534 10.5172 24.4795 11.0497 24.5857C11.5822 24.6919 12.0714 24.9541 12.4553 25.339C12.8392 25.7239 13.1008 26.2144 13.2067 26.7483C13.3126 27.2822 13.2582 27.8356 13.0504 28.3386C12.8426 28.8415 12.4907 29.2714 12.0393 29.5738C11.5878 29.8763 11.0571 30.0377 10.5142 30.0377C10.1535 30.038 9.79624 29.967 9.46293 29.8288C9.12963 29.6906 8.82677 29.4879 8.57164 29.2322C8.3165 28.9766 8.11415 28.6731 7.97606 28.339C7.83797 28.005 7.76687 27.6469 7.76687 27.2853H7.76887ZM11.6614 21.499C11.3957 21.4998 11.1369 21.4131 10.925 21.2522C10.7132 21.0914 10.5598 20.8652 10.4885 20.6086L5.53787 2.6818H2.06234C1.74122 2.6818 1.43324 2.5539 1.20618 2.32625C0.979117 2.09859 0.851562 1.78982 0.851562 1.46786C0.851562 1.1459 0.979117 0.837127 1.20618 0.609468C1.43324 0.381809 1.74122 0.253912 2.06234 0.253912H6.44755C6.71336 0.253077 6.97204 0.339889 7.1838 0.500976C7.39555 0.662064 7.54854 0.888489 7.61932 1.14537L12.57 19.0721H26.0687L30.5585 8.75256H15.6031C15.4411 8.75729 15.2798 8.72937 15.1287 8.67046C14.9776 8.61155 14.8398 8.52285 14.7236 8.40961C14.6073 8.29637 14.5148 8.16089 14.4517 8.0112C14.3886 7.8615 14.3561 7.70062 14.3561 7.5381C14.3561 7.37557 14.3886 7.2147 14.4517 7.065C14.5148 6.9153 14.6073 6.77982 14.7236 6.66658C14.8398 6.55334 14.9776 6.46465 15.1287 6.40574C15.2798 6.34683 15.4411 6.31892 15.6031 6.32364H32.4156C32.616 6.32359 32.8133 6.37361 32.9897 6.46919C33.166 6.56476 33.3158 6.70287 33.4255 6.87105C33.536 7.03977 33.6032 7.23327 33.6211 7.43431C33.639 7.63536 33.6071 7.83771 33.5281 8.02337L27.9915 20.7708C27.8968 20.9871 27.7415 21.1712 27.5443 21.3005C27.3472 21.4298 27.1167 21.4988 26.8811 21.499H11.6614Z" />
           </svg>
 
-          <span class="counter">0</span>
-          
+          <span class="counter hidden">0</span>
+
+          <div class="cart-element hidden">
+            <ul class="cart-table-head">
+              <li class="cart-table-title">Item name</li>
+              <li class="cart-table-title">Count</li>
+              <li class="cart-table-title">Cost</li>
+              <li class="cart-table-title">Price</li>
+              <li class="cart-table-title"></li>
+            </ul>
+            
+              <ul class="cart-table-row">
+                <li class="cart-table-item"><span class="item-name-value">Item name</span></li>
+                <li class="cart-table-item"><span class="item-count-value">1</span></li>
+                <li class="cart-table-item">$&nbsp<span class="item-cost-value">3456</span></li>
+                <li class="cart-table-item">$&nbsp<span class="item-price-value">3456</span></li>
+                <li class="cart-table-item fa-solid fa-xmark"></li>
+              </ul>
+      
+            <div class="total-cart">
+              <ul class="total-cart-price">
+                <li class="total-text">Total</li>
+                <li class="total-number">$&nbsp<span class="total-number-value"></span></li>
+              </ul>
+            </div>
+
+
+
+
+          </div>
         </button>
       </div>
     </div>
@@ -257,17 +285,17 @@
           </div>
 
         </div>
-        
+
 
 
       </form>
 
       <section class="products">
 
-<!-- products-list -->
+        <!-- products-list -->
 
         <ul class="products-list">
-          <li class="products-item">
+          <li class="products-item" data-id="1" data-name="ELLERY X M'O CAPSULE" data-price="52.00">
             <article class="brand-products-item">
               <div class="products-item-link">
                 <div class="products-item-photo-wrp">
@@ -283,20 +311,20 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">ELLERY X M'O CAPSULE</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">52.00</span></p>
                 </div>
               </div>
 
             </article>
           </li>
-          <li class="products-item">
+          <li class="products-item" data-id="2" data-name="ELLERY" data-price="23.00">
             <article class="brand-products-item">
-              <a href="product.html" class="products-item-link">
+              <dic class="products-item-link">
                 <div class="products-item-photo-wrp">
 
                   <img class="products-item-photo" src='img/catalog-img02.png' alt="product description" height="420">
@@ -310,20 +338,20 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">ELLERY</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">23.00</span></p>
                 </div>
-              </a>
+              </dic>
 
             </article>
           </li>
-          <li class="products-item catalog-hidden-item">
+          <li class="products-item catalog-hidden-item" data-id="3" data-name="CAPSULE" data-price="52">
             <article class="brand-products-item">
-              <a href="#" class="products-item-link">
+              <div class="products-item-link">
                 <div class="products-item-photo-wrp">
 
                   <img class="products-item-photo" src='img/featured-item02.png' alt="product description" height="420">
@@ -337,20 +365,20 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">CAPSULE</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">44.00</span></p>
                 </div>
-              </a>
+              </div>
 
             </article>
           </li>
-          <li class="products-item">
+          <li class="products-item" data-id="4" data-name="CAPS X M'OLERY" data-price="52">
             <article class="brand-products-item">
-              <a href="#" class="products-item-link">
+              <div class="products-item-link">
                 <div class="products-item-photo-wrp">
 
                   <img class="products-item-photo" src='img/featured-item05.png' alt="product description" height="420">
@@ -364,20 +392,20 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">CAPS X M'OLERY</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">61.00</span></p>
                 </div>
-              </a>
+              </div>
 
             </article>
           </li>
-          <li class="products-item">
+          <li class="products-item" data-id="5" data-name="ELLERY X" data-price="52">
             <article class="brand-products-item">
-              <a href="#" class="products-item-link">
+              <div class="products-item-link">
                 <div class="products-item-photo-wrp">
 
                   <img class="products-item-photo" src='img/catalog-img04.png' alt="product description" height="420">
@@ -391,20 +419,20 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">ELLERY X</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">58.00</span></p>
                 </div>
-              </a>
+              </div>
 
             </article>
           </li>
-          <li class="products-item">
+          <li class="products-item" data-id="6" data-name="O CAPSULE" data-price="52">
             <article class="brand-products-item">
-              <a href="#" class="products-item-link">
+              <div class="products-item-link">
                 <div class="products-item-photo-wrp">
 
                   <img class="products-item-photo" src='img/catalog-img05.png' alt="product description" height="420">
@@ -418,21 +446,21 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">O CAPSULE</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">49.00</span></p>
                 </div>
-              </a>
+              </div>
 
             </article>
           </li>
 
-          <li class="products-item">
+          <li class="products-item" data-id="7" data-name="ELLERY X M'O" data-price="52">
             <article class="brand-products-item">
-              <a href="#" class="products-item-link">
+              <div class="products-item-link">
                 <div class="products-item-photo-wrp">
 
                   <img class="products-item-photo" src='img/catalog-img06.png' alt="product description" height="420">
@@ -446,21 +474,21 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">ELLERY X M'O</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">54.00</span></p>
                 </div>
-              </a>
+              </div>
 
             </article>
           </li>
 
-          <li class="products-item">
+          <li class="products-item" data-id="8" data-name="LERY X M'O CAPS" data-price="52">
             <article class="brand-products-item">
-              <a href="#" class="products-item-link">
+              <div class="products-item-link">
                 <div class="products-item-photo-wrp">
 
                   <img class="products-item-photo" src='img/catalog-img07.png' alt="product description" height="420">
@@ -474,21 +502,21 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">LERY X M'O CAPS</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">46.00</span></p>
                 </div>
-              </a>
+              </div>
 
             </article>
           </li>
 
-          <li class="products-item products-itemhidden">
+          <li class="products-item products-itemhidden" data-id="9" data-name="CAPSULE MX" data-price="52">
             <article class="brand-products-item">
-              <a href="#" class="products-item-link">
+              <div class="products-item-link">
                 <div class="products-item-photo-wrp">
 
                   <img class="products-item-photo" src='img/catalog-img08.png' alt="product description" height="420">
@@ -502,14 +530,14 @@
                   </button>
                 </div>
                 <div class="products-item-txt-wrp">
-                  <h3 class="products-item-title">ellery x m'o capsule </h3>
+                  <h3 class="products-item-title">CAPSULE MX</h3>
                   <p class="products-item-txt">Known for her sculptural takes on traditional tailoring, Australian
                     arbiter
                     of cool Kym Ellery teams up with Moda Operandi.</p>
 
-                  <p class="products-item-price">$52.00</p>
+                  <p class="products-item-price">$<span class="item-cost-num">56.00</span></p>
                 </div>
-              </a>
+              </div>
 
             </article>
           </li>
@@ -658,7 +686,7 @@
 
   </footer>
 
-<script src="cart.js"></script>
+  <script src="cart.js"></script>
 
 </body>
 
