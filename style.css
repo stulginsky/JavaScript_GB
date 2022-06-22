@@ -307,9 +307,9 @@ span::selection {
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   background-color: white;
   border-radius: 8px;
   padding: 10px 16px;
@@ -397,8 +397,8 @@ span::selection {
   display: grid;
   -ms-grid-columns: 1fr (120px)[3] 52px;
       grid-template-columns: 1fr repeat(3, 120px) 52px;
-  -ms-grid-rows: 52px;
-      grid-template-rows: 52px;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
 }
 
 .total-text,
@@ -412,7 +412,7 @@ span::selection {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 52px;
+  height: 72px;
   color: #5D5D5D;
   font-size: 20px;
   font-weight: 700;
@@ -421,8 +421,9 @@ span::selection {
 }
 
 .total-text {
-  -ms-grid-column: 3;
-      grid-column-start: 3;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .total-number {

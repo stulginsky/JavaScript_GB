@@ -355,7 +355,7 @@ span::selection {
   right: 0px;
   width: 100%;
   min-width: max-content;
-  height: min-content;
+  height: max-content;
   background-color: white;
   border-radius: 8px;
   padding: 10px 16px;
@@ -417,7 +417,7 @@ span::selection {
 .total-cart-price {
   display: grid;
   grid-template-columns: 1fr repeat(3, 120px) 52px;
-  grid-template-rows: 52px;
+  grid-template-rows: auto;
 
 }
 
@@ -426,7 +426,7 @@ span::selection {
   display: flex;
   justify-content: start;
   align-items: center;
-  height: 52px;
+  height: 72px;
   color: $black300;
   font-size: 20px;
   font-weight: 700;
@@ -435,7 +435,8 @@ span::selection {
 }
 
 .total-text {
-  grid-column-start: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .total-number {
