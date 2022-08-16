@@ -2,7 +2,7 @@
 
 
 //вот тут расписал вариант ко второму пункту задания
-// проблему встретил на 41 строке
+
 class Product {
   constructor(id, title, price, imgUrl) {
     this.id = id;
@@ -11,76 +11,85 @@ class Product {
     this.imgUrl = imgUrl;
   }
   renderProduct() {
-    return `
-    <div class="product-item">
-      <h3 class="product-title">${this.title}</h3>
-      <img src = "${this.imgUrl}" alt="">
-      <p class = "product-price">${this.price}</p>
-      <button class="buy-btn">Купить</button>
-    </div>
-    `;
+    return `<div class="product-item">
+  <h3>${this.title}</h3>
+  <div class="product-img">
+    <img src="${this.imgUrl}" alt="">
+  </div>
+  <p>${this.price}</p>
+  <button class="buy-btn">Купить</button>
+</div>`
   }
-
+  // ВОПРОС. Тут у меня картинка прописывается в разметку.
+  // Как сделать так, чтобы при помощи функции автоматизировать добавление картинки
+  // в css, чтобы она была декором и управлялась различными свойствами css background?
 }
 
-const products = {
-  misc: [
-    new Product(1, "Laptop", "80000", "https://picsum.photos/id/0/200"),
-    new Product(2, "Little dog", "3000", "https://picsum.photos/id/1025/200"),
-    new Product(3, "Last gumshoes", "3000", "https://picsum.photos/id/103/200"),
-    new Product(3, "IKEA goodby kit", "3000", "https://picsum.photos/id/1068/200"),
-  ]
-}
+const products = [
+  new Product(1, "Laptop", "80000 у.е.", "https://picsum.photos/id/0/200"),
+  new Product(2, "Little dog", "2500 у.е.", "https://picsum.photos/id/1025/200"),
+  new Product(3, "Last gumshoes", "12000 у.е.", "https://picsum.photos/id/103/200"),
+  new Product(4, "IKEA goodby kit", "5000 у.е.", "https://picsum.photos/id/1068/200"),
+];
 
-const renderPage = list => {
-  console.log(list);
-  // join решает проблему запятых, опробовал на первом варианте,
-  //устанавливает разделителем массива пустоту вместо запятой
-  // но вот тут на мапе споткнулся;( не понимаю до конца как это работает,
-  // поэтому не могу найти правильного пути, видимо надоо на пальцах объяснить)))
-  const productsList = list.map(item => item.renderProduct()).join("");
-  console.log(productsList);
-  document.querySelector('.products').innerHTML = productsList;
-};
-
-renderPage(products);
-
+const productsDiv = document.querySelector('.products');
+productsDiv.innerHTML = products.map(item => item.renderProduct()).join("");
+//join заменяет разделитель намапленного массива с запятой на пустую строку
 
 
 /**
+
 const products = [{
     id: 1,
     title: 'Notebook',
-    price: 2000,
+    price: 2000 + " у.е.",
     imgUrl: "https://picsum.photos/id/0/200"
   },
   {
     id: 2,
     title: 'Mouse',
-    price: 20,
+    price: 20 + " у.е.",
     imgUrl: "https://picsum.photos/id/1025/200"
   },
   {
     id: 3,
     title: 'Keyboard',
-    price: 200,
+    price: 200 + " у.е.",
     imgUrl: "https://picsum.photos/id/103/200"
   },
   {
     id: 4,
     title: 'Gamepad',
-    price: 50,
+    price: 50 + " у.е.",
     imgUrl: "https://picsum.photos/id/1068/200"
   },
 ];
+
+// косяк со чтением урла из объекта "undefined"
+
+// console.log(Object.values(products));
+
+// const renderProduct = (title, price, imgUrl) => {
+//   return `<div class="product-item">
+//                 <h3>${title}</h3>
+//                 <img src="${imgUrl}" alt="">
+//                  <p>${price}</p>
+//                 <button class="buy-btn">Купить</button>
+//             </div>`
+// };
+
+
 //Функция для формирования верстки каждого товара
 //Добавить в выводе изображение
-const renderProduct = (title, price) => {
+const renderProduct = (title, price, imgUrl) => {
   return `<div class="product-item">
-                <h3>${title}</h3>
-                <p>${price}</p>
-                <button class="buy-btn">Купить</button>
-            </div>`
+  <h3>${title}</h3>
+  <div class="product-img">
+    <img src="https://picsum.photos/id/0/300/200" alt="">
+  </div>
+  <p>${price}</p>
+  <button class="buy-btn">Купить</button>
+</div>`
 };
 const renderPage = list => {
   const productsList = list.map(item => renderProduct(item.title, item.price)).join("");
@@ -89,4 +98,10 @@ const renderPage = list => {
 };
 
 renderPage(products);
+
  */
+
+
+// let cost = document.querySelector('p');
+// let price = parseInt(cost.innerHTML);
+// console.log(price);
