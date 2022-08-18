@@ -1,0 +1,69 @@
+<script>
+    class Car{
+        constructor(title,price){
+            this.title = title;
+            this.price = price;
+        }
+    }
+    
+    class Factory{
+        constructor(titleFactory){
+            this.titleFactory = titleFactory;
+        }
+        
+        createCar(title){
+            console.log(`На заводе ${this.titleFactory} началась сборка автомобиля ${title} началась...`);
+            let car = new Car(title,parseInt(Math.random() * 4000 + 1000));
+            return car;
+        }
+    }
+    
+    class Order{
+         constructor(countCars,factory,models,diller){
+             this.countCars = countCars;//количество авто в заказе
+             this.factory = factory;
+             this.models = models;
+             this.diller = diller;
+             this.cars = [];//массив автомобилей, которые изготовил завод
+             this.sumOrder = 0;//сумма заказа
+             this.startOrder();
+             this.showInfo();
+         }
+         showInfo(){
+             this.cars.forEach(car => console.log(`Автомобиль ${car.title} стоит ${car.price}`));
+             console.log(`Общая сумма заказа составляет ${this.sumOrder}`);
+         }
+         startOrder(){
+            for(let i = 0;i < this.countCars;i++){
+                this.cars.push(this.factory.createCar(this.models[parseInt(Math.random() * this.models.length)]));
+                this.sumOrder += this.cars[i].price;
+            }
+         }
+    }
+    
+    class Diller{
+        constructor(title,countYears){
+            this.title = title;
+             this.countYears = countYears;
+        }
+    }
+    
+    class Main{
+        static run(){
+            const COUNT = parseInt(Math.random() * 20 + 10);//количество авто в заказе
+            const MODELS = ['Ларгус','Веста','Гранта'];
+            const factory = new Factory('АвтоВаз');
+            const diller = new Diller('Элвис',20);
+            const order = new Order(COUNT,factory,MODELS,diller);
+        }
+    }
+    
+    Main.run();
+    
+    
+    
+    
+    
+    
+    
+</script>
