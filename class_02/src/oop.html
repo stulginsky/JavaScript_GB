@@ -1,0 +1,99 @@
+<script>
+    
+//    Существует два вида методов 
+//    1) Методы класса (статические методы)
+//    2) Методы объекта
+    
+    class Office{
+        constructor(persons,title){
+            this.men = persons;
+            this.title = title;
+        }
+        
+        showInfoAll(){
+            this.men.forEach(item => console.log(item.getInfo()));
+        }
+        /**
+        * В этом методе изменяем оклад сотрудника с учетом премии или взыскания
+        * @param man - сотрудник для которого изменяем оклад
+        * @param rate - процент от з/п. Если rate > 0 - это премия, а иначе взыскание
+        */
+        static setRate(man,rate){
+            console.log(rate > 0 ? `Сотруднику ${man.fio} начислена премия!`: `Сотрудник ${man.fio} получает взыскание`);
+            man.salary += man.salary * rate / 100;
+        }
+        
+        getPersonWithMaxSalary(){
+            let manMax = this.men[0];
+            for(let i = 1;i < this.men.length;i++){
+                if(manMax.salary < this.men[i].salary){
+                    manMax = this.men[i];
+                }
+            }
+            return manMax;
+        }
+        
+         getPersonWithMinSalary(){
+            let manMin = this.men[0];//пусть первый сотрудник содержит минимальный оклад
+            for(let i = 1;i < this.men.length;i++){
+                if(manMin.salary > this.men[i].salary){
+                    manMin = this.men[i];
+                }
+            }
+            return manMin;
+        }
+    }
+    
+    class Person{
+//        Конструктор класса - это метод, который запускается при создании объекта класса через оператор new
+//        Цель конструктора - инициализировать оъект класса
+    
+        constructor(id,fio,age,salary){
+            this.id = id;
+            this.fio = fio;
+            this.age = age;
+            this.salary = salary;
+        }
+        
+        getInfo(){
+            return `Сотруднику ${this.fio} ${this.age} лет. Он зарабатывает ${this.salary}\n`;
+        }
+    }
+    
+    //Если в базовом классе есть конструктор, то в потомке обязательно делаем конструктор в котором
+//    вызываем базовый конструктор через ключевое слово super()
+    class Manager extends Person{
+        constructor(id,fio,age,salary,role){
+            super(id,fio,age,salary);
+            this.role = role;
+        }
+        
+        getInfo(){
+            return `${super.getInfo()} Сотрудник имеет роль ${this.role}`;
+        }
+    }
+    
+    let man = new Manager(1,"Иванов",30,500000,'Директор');
+    console.log(man.getInfo());
+//    let man1 = new Person(1,"Иванов",30,70000);
+//    let man2 = new Person(2,"Петров",50,170000);
+//    let man3 = new Person(3,"Сидоров",40,90000);
+//    let men = [man1,man2,man3];
+    
+    
+    
+//    const office = new Office(men,'IT Start');
+//    office.showInfoAll();
+//    const manMax = office.getPersonWithMaxSalary();//нашли сотрудника с макс. окладом
+//    const manMin = office.getPersonWithMinSalary();
+//    console.log(`Сотрудник ${manMax.fio} имеет максимальный оклад ${manMax.salary}`);
+//    console.log(`Сотрудник ${manMin.fio} имеет минимальный оклад ${manMin.salary}`);
+    
+//    const RATE = 20;
+//    
+//    
+//    Office.setRate(manMax,-RATE);
+//    Office.setRate(manMin,RATE);
+//    console.log('\nИнформация о сотрудниках после применения взыскания и премии\n');
+//    office.showInfoAll();
+</script>
