@@ -1,0 +1,76 @@
+<script>
+    let userJson = '{"name":"Иван","age":20,"isAdmin":true}';
+    let user = JSON.parse(userJson);
+//    console.log(user);
+    user.dateCreated = '2022-08-19';
+    user.address = {
+        city:'Москва',
+        postalCode:'2342424'
+    }
+    
+//    console.log(user);
+    
+//    Преобразование объекта в строку JSON
+    
+    let userStr = JSON.stringify(user,null,4);
+//    console.log(userStr);
+    
+    let user3 = JSON.parse(userStr,(key,value)=>{
+        if(key == 'dateCreated'){
+            value = new Date(value);
+        }
+        return value;
+    });
+    
+    console.log(user3);
+    
+//    Асинхронность
+    
+//    const async = a => {
+//        setTimeout(()=>{
+//            const b = a + 1;
+//            return b;
+//        },3000);
+//        return 5000;
+//    }
+//    
+//    console.log(async(5));
+    
+//    Promise - это объект, в котором есть свойства resolve и reject и эти
+//    свойства назначаются в зависимости от асинхронности
+//    У объекта Promise есть два обработчика - then и catch. Если всё выполняется
+//        успешно, то запускается then 
+    
+    let num = a => {
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                if(a){
+                    resolve(a + 10);//после resolve запускается обратчика then
+                }else{
+                    reject('error');//после reject запускается обратчика catch
+                }   
+                
+            },3000);
+            return 5000;
+        });
+    };
+    
+    num(5)
+        .then(data=>{
+            console.log(data);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
