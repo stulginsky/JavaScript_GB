@@ -1,0 +1,19 @@
+<script>
+//    fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+//        .then(text => text.json())
+//        .then(data=>{//data - объект со всеми курсами
+//            console.log(data.Valute.USD.Value);
+//        })
+    
+//    let usd = 0;
+    async function f(){
+        let src = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+        let srcJS = await src.json();
+        usd = srcJS.Valute.USD.Value;
+//        console.log(usd);
+        return usd;
+    }
+    f().then(data=>console.log(data));
+   
+    
+</script>
