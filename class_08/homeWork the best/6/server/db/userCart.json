@@ -1,0 +1,22 @@
+{
+    "amount": 46600,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 1,
+            "id_product": 100,
+            "product_name": "Ноутбук",
+            "price": 45600,
+            "imgProduct": "./img/products/100.png",
+            "imgCart": "./img/cart/100.png"
+        },
+        {
+            "quantity": 1,
+            "id_product": 278,
+            "product_name": "Клавиатура",
+            "price": 1600,
+            "imgProduct": "./img/products/278.png",
+            "imgCart": "./img/cart/278.png"
+        }
+    ]
+}
